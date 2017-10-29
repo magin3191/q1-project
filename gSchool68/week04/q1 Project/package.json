@@ -1,0 +1,13 @@
+
+  {
+  "name": "q1 Projcet",
+  "version": ""
+
+
+},
+
+  "scripts": {
+  "test": "mocha"
+}
+
+}

@@ -1,0 +1,51 @@
+/*.col-lg-2{
+
+  height: 10%;
+  width: 10%
+}*/
+
+
+/*.row{
+  margin: 0 auto;
+   width: 80%;
+}*/
+
+.container-fluid{
+display: block;
+margin: 20%;
+height:
+/*padding-left: 20%*/
+
+
+}
+
+
+body{
+
+background-image: url(data[randomNum]['urls']['small']);
+
+}
+
+.col-lg-2{
+  padding: 0px;
+  height: 75px;
+  /*height: 1px;
+  width: 150px;*/
+  border: 2px solid black;
+
+}
+
+.name{
+
+  width:75%;
+  padding-bottom: 0px;
+  border: 1px solid green;
+
+}
+
+
+.front{
+
+text-align: center;
+
+}

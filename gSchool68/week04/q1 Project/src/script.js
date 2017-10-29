@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
+modula.exports={
+  myFunc: myFunc
+}
