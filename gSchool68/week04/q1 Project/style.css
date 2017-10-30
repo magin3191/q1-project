@@ -1,45 +1,73 @@
-/*.col-lg-2{
 
-  height: 10%;
-  width: 10%
-}*/
-
-
-/*.row{
-  margin: 0 auto;
-   width: 80%;
-}*/
-
-.container-fluid{
-display: block;
-margin: 20%;
-height:
-/*padding-left: 20%*/
+.container-fluid {
+  display: block;
+  margin: 20%;
 
 
 }
 
+.chosen{
+  /*display:none;*/
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  color: black
+}
 
-body{
 
-background-image: url(data[randomNum]['urls']['small']);
+h1 {
+  text-align: center;
+  color: rgb(58, 255, 69);
 
 }
+
+p {
+  text-align: center;
+  color: rgb(58, 255, 69)
+}
+
+
+body {
+  text-shadow: 2px;
+  background-image: url(data[randomNum]['urls']['small']);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#cohort{
+  background-color: rgb(58, 216, 69);
+  color: orange;
+  opacity: .7;
+  margin-bottom:3%;
+  border: 2px solid green;
+
+}
+
+
 
 .col-lg-2{
+  background-color: rgb(58, 216, 69);
   padding: 0px;
   height: 75px;
-  /*height: 1px;
-  width: 150px;*/
   border: 2px solid black;
+  opacity: .7
 
 }
 
 .name{
-
+  color: orange;
+  background-color: rgb(58, 255, 69);
   width:75%;
   padding-bottom: 0px;
   border: 1px solid green;
+
+}
+
+#save{
+background-color: rgb(58, 255, 69)
 
 }
 
@@ -48,4 +76,16 @@ background-image: url(data[randomNum]['urls']['small']);
 
 text-align: center;
 
+}
+
+#setup{
+  background-color: rgb(58, 255, 69)
+}
+
+#call{
+  background-color: rgb(58, 255, 69)
+}
+
+#reset{
+  background-color: rgb(58, 255, 69)
 }
