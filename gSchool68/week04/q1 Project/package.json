@@ -1,13 +1,14 @@
-
-  {
-  "name": "q1 Projcet",
-  "version": ""
-
-
-},
-
+{
+  "name": "mocha-browser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-  "test": "mocha"
-}
-
+    "mocha": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "node": "^8.3.0"
+  }
 }
