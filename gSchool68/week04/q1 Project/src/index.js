@@ -17,7 +17,7 @@ function randomFn() {
 
 $(document).ready(function() {
 
-  // JSON.parse(localStorage.getItem('cohort'))
+
 
   var randomNum = randomFn();
   var $xhr = $.getJSON("https://api.unsplash.com/photos/?client_id=c8cb856e48667f11dd504c2db4541cd1eeb02a1da21d9e2835ab0040dbc823e3");
@@ -59,9 +59,7 @@ if(selectedArr.length>0){
   $('#call').attr('disabled',false);
 }
 console.log(selectedArr)
-  // var holderArr=[];
 
-  // var savedNames;
 
   setup.click(function() {
 
