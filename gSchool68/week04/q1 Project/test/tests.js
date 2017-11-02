@@ -3,20 +3,20 @@ const expect = chai.expect
 
 
 
-describe('nameArr',function(){
-  it('is an array',function(){
-    expect(nameArr).to.be.an('array')
+describe('randomFn',function(){
+  it('is a function',function(){
+    expect(randomFn).to.be.a('function')
   })
 })
 
-describe('selectedArr',function(){
-  it('is an array',function(){
-    expect(selectedArr).to.be.an('array')
+describe('showDiv',function(){
+  it('is a function',function(){
+    expect(showDiv).to.be.a('function')
   })
 })
 
-describe('holderArr',function(){
-  it('is an array',function(){
-    expect(holderArr).to.be.an('array')
+describe('reset',function(){
+  it('is a function',function(){
+    expect(reset).to.be.a('function')
   })
 })

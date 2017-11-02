@@ -11,7 +11,7 @@
   border-right: 1px solid black;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
-  color: black
+  color: blue
 }
 
 
@@ -37,14 +37,8 @@ body {
 
 }
 
-#cohort{
-  background-color: rgb(58, 216, 69);
-  color: orange;
-  opacity: .7;
-  margin-bottom:3%;
-  border: 2px solid green;
 
-}
+
 
 
 
@@ -53,41 +47,25 @@ body {
   padding: 0px;
   height: 75px;
   border: 2px solid black;
-  opacity: .7
+  opacity: .7;
+
 
 }
 
 .name{
-  color: orange;
+  color: purple;
+  font-size: 17px;
   background-color: rgb(58, 255, 69);
   width:75%;
   padding-bottom: 0px;
-  border: 1px solid green;
-
-}
-
-.savedCohort{
-
-  cursor: pointer;
-}
-
-.colorChange{
-
-  color: rgb(58, 255, 69);
-}
+  border: 1px solid blue;
 
 
-#save{
-background-color: rgb(58, 255, 69)
 
 }
 
 
-.front{
 
-text-align: center;
-
-}
 
 #setup{
   background-color: rgb(58, 255, 69)

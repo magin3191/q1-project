@@ -1,23 +1,35 @@
 
+//test functions
+function showDiv(){
+$('.noneLeft').text('No Students Left.').css('color','red')
+}
 
-// var nameArr=[]
-// var selectedArr=[];
-// var holderArr=[];
-// var savedNames;
+function reset() {
+
+}
+
+
+function randomFn() {
+  return Math.round(Math.random() * 10)
+}
+
+
 
 $(document).ready(function() {
 
-// JSON.parse(localStorage.getItem('cohort'))
+  // JSON.parse(localStorage.getItem('cohort'))
 
-  var randomNum = Math.round(Math.random() * 10);
+  var randomNum = randomFn();
   var $xhr = $.getJSON("https://api.unsplash.com/photos/?client_id=c8cb856e48667f11dd504c2db4541cd1eeb02a1da21d9e2835ab0040dbc823e3");
   $xhr.done(function(data) {
     if ($xhr.status !== 200) {
       return;
+      //set default background-image
+      $('body').css('background-color', 'pink');
+
     }
     var image = data[randomNum]['urls']['regular']
-    // console.log(data);
-    // console.log(data[randomNum]['urls']['regular']);
+
     $('body').css('background-image', 'url(' + image + ')')
 
 
@@ -28,32 +40,46 @@ $(document).ready(function() {
 
   var cohort = $('#cohort').val();
   var call = $('#call');
-  var nameArr =JSON.parse(localStorage.getItem('nameArr'))||[];
+  var nameArr = (JSON.parse(localStorage.getItem('nameArr'))) || []; //access nameArr on reload
   var name = $('.name').val();
-  var selectedArr=(JSON.parse(localStorage.getItem('selectedArr')))||[];
+  var selectedArr = (JSON.parse(localStorage.getItem('selectedArr'))) || []; //access nameArr on reload
+
   var setup = $('#setup');
+
+(function(){
+  savedNames = nameArr //adding the stored nameArr to the input fields on reload
+  $('.name').each(function(i) {
+    $(this).val(savedNames[i])
+    console.log($(this));
+  })
+})()
+
+
+if(selectedArr.length>0){
+  $('#call').attr('disabled',false);
+}
+console.log(selectedArr)
   // var holderArr=[];
 
   // var savedNames;
 
   setup.click(function() {
+
+
     $('#call').removeAttr('disabled'); //enables cold call button
     $('.name').each(function() {
-      nameArr.push($(this).val());
+      nameArr.push($(this).val()); //adds inputs to array
     })
     for (var i = 0; i < nameArr.length; i++) {
       if (nameArr[i] !== '') {
         selectedArr.push(nameArr[i], nameArr[i], nameArr[i]) //adds three of each name
-        // console.log(selectedArr);
-        // holderArr.push(nameArr[i]);
-        // console.log(nameArr);
-
-        // console.log(holderArr,'this is holderArr');//stores names to be added to input fields upon load
+        console.log(selectedArr);
 
       }
     }
-    // console.log(selectedArr)
 
+    localStorage.setItem("nameArr", JSON.stringify(nameArr))
+    localStorage.setItem('selectedArr', JSON.stringify(selectedArr))
 
   });
 
@@ -63,105 +89,40 @@ $(document).ready(function() {
   call.click(function(event) {
     var random = Math.floor(Math.random() * selectedArr.length);
 
-    // $('#call').attr('disabled', 'false');
     var selectedItem = selectedArr[random] //element that is picked
-    // console.log(selectedItem);
+    localStorage.setItem("nameArr", JSON.stringify(nameArr)) //set nameArr to local storage
     $('.chosen').text('Cold Call: ' + selectedItem).css('background-color', 'green')
-    selectedArr.splice(random, 1)
-    localStorage.setItem('selectedArr',JSON.stringify(selectedArr))
+    selectedArr.splice(random, 1);
+    localStorage.setItem('selectedArr', JSON.stringify(selectedArr)) //set selectedArr to local storage
+
     if (selectedItem === undefined) {
-
-      alert('No students present');
-
+      showDiv();
       $('.chosen').text('Cold Call: ' + 'No students present').css('background-color', 'red')
-        // event.stopImmediatePropigation();
+
     }
 
 
 
   })
 
-  $('#reset').click(function() {
 
-    location.reload()
 
+
+
+  $('#reset').click(function(){
+    $('#call').attr('disabled',true)
+    $('.chosen').text('Cold Call: reset ').css('background-color', 'green')
+    nameArr=[];
+    selectedArr=[];
+    $('.name').each(function() {
+      $(this).val('')
+      console.log($(this));
+    })
+    localStorage.setItem('nameArr', JSON.stringify(nameArr))
+    localStorage.setItem('selectedArr',JSON.stringify([]))
+
+    console.log(localStorage);
   })
-
-  // function randomNumm(){
-  //   return Math.round(Math.random()*10)
-  // }
-  // console.log(randomNumm()); functions generate a new random
-  // console.log(randomNumm());
-
-
-  $('#save').click(function(event){
-    event.preventDefault();
-
-    localStorage.setItem("nameArr",JSON.stringify(nameArr));//adds names to storage
-    // console.log(nameArr)
-    // console.log(savedNames)
-    // localStorage.setItem('holder',JSON.stringify(holderArr));//holderArr set to storage
-// console.log(holderArr)
-    $('.savedCohort').text('Saved: '+ $('#cohort').val());//the value of the input field
-    localStorage.setItem('cohort',JSON.stringify($('#cohort').val()))//cohort input field value
-    localStorage.setItem('selectedArr',JSON.stringify(selectedArr));//array of names
-    // $('.name').each(function(){
-    //   localStorage.setItem('names',JSON.stringify($(this).val()));
-    //   console.log(JSON.stringify($(this).val()),'names')
-    // })
-     //saving saved names
-
-
-  })
-
-    // console.log(JSON.parse(localStorage.getItem('selectedArr')))
-
-
-
-function appendCohort(){
-
-  $('.savedCohort').text('Saved: '+(JSON.parse(localStorage.getItem('cohort'))))
-
-}
-appendCohort()
-
-
-  $('.savedCohort').click(function(){
-    $(this).toggleClass("colorChange");
-    $('#call').attr('disabled', 'true');
-    savedNames=nameArr
-
-
-$('.name').each(function(i){
-$(this).val(savedNames[i])
-})
-
-
-console.log(nameArr)
-// console.log(savedNames)
-
-
-
-
-;
-
-    $('#call').removeAttr('disabled');
-    // console.log(selectedArr)
-    // console.log(holderArr)//add holderArr to name inputs
-
-
-  })
-
-
-
-
-
-
-
-
-
-
-
 
 
 
