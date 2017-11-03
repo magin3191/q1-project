@@ -3,7 +3,7 @@
 function showDiv(){
 
     $('.noneLeft').text('fill out seats again.').css('color','red')
-  
+
 }
 
 function reset() {
@@ -26,9 +26,7 @@ $(document).ready(function() {
   $xhr.done(function(data) {
     if ($xhr.status !== 200) {
       return;
-      //set default background-image
-      $('body').css('background-color', 'pink');
-
+    
     }
     var image = data[randomNum]['urls']['regular']
 
