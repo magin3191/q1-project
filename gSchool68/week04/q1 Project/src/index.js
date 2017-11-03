@@ -1,7 +1,9 @@
 
 //test functions
 function showDiv(){
-$('.noneLeft').text('No Students Left.').css('color','red')
+
+    $('.noneLeft').text('fill out seats again.').css('color','red')
+  
 }
 
 function reset() {
@@ -109,7 +111,8 @@ console.log(selectedArr)
 
   $('#reset').click(function(){
     $('#call').attr('disabled',true)
-    $('.chosen').text('Cold Call: reset ').css('background-color', 'green')
+    $('.chosen').text('Cold Call: reset ').css('background-color', 'green');
+
     nameArr=[];
     selectedArr=[];
     $('.name').each(function() {

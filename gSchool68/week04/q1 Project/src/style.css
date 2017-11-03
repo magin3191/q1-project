@@ -4,6 +4,8 @@
   margin: 20%;
 
 
+
+
 }
 
 .chosen{
@@ -11,13 +13,20 @@
   border-right: 1px solid black;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
-  color: blue
+  color: blue;
+  opacity: .7
 }
 
 
 h1 {
   text-align: center;
   color: rgb(58, 255, 69);
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: green;
+  opacity:.7;
+  border: 3px solid grey;
+
 
 }
 
@@ -28,6 +37,7 @@ p {
 
 
 body {
+  font-family: Sans-serif;
   text-shadow: 2px;
   background-image: url(data[randomNum]['urls']['small']);
   height: 100%;
@@ -46,13 +56,14 @@ body {
   background-color: rgb(58, 216, 69);
   padding: 0px;
   height: 75px;
-  border: 2px solid black;
+  border: 1px solid grey;
   opacity: .7;
 
 
 }
 
 .name{
+  font-family: sans-serif;
   color: purple;
   font-size: 17px;
   background-color: rgb(58, 255, 69);
@@ -68,13 +79,16 @@ body {
 
 
 #setup{
-  background-color: rgb(58, 255, 69)
+  background-color: rgb(58, 255, 69);
+  border-radius: 5px
 }
 
 #call{
-  background-color: rgb(58, 255, 69)
+  background-color: rgb(58, 255, 69);
+  border-radius: 5px;
 }
 
 #reset{
-  background-color: rgb(58, 255, 69)
+  background-color: rgb(58, 255, 69);
+  border-radius: 5px;
 }
