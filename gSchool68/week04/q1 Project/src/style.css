@@ -30,9 +30,21 @@ h1 {
 
 }
 
+
+.subtitle{
+
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: green;
+  opacity:.7;
+  border: 3px solid grey;
+
+}
+
 p {
   text-align: center;
-  color: rgb(58, 255, 69)
+  color: rgb(58, 255, 69);
+
 }
 
 
